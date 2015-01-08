@@ -1,0 +1,176 @@
+<h:html xmlns="http://www.w3.org/2002/xforms"
+        xmlns:h="http://www.w3.org/1999/xhtml"
+        xmlns:ev="http://www.w3.org/2001/xml-events"
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:jr="http://openrosa.org/javarosa">
+  <h:head>
+    <h:title>Oral History</h:title>
+ 	
+ 	<model>
+ 		<instance>
+ 			<faims id="oral_history">
+				<style>
+		            <orientation>
+		            	<orientation/>
+		            </orientation>
+		            <even>
+		            	<layout_weight/>
+		            </even>
+		            <leftBigger>
+		            	<layout_weight/>
+		        	</leftBigger>
+		        </style>
+		        <user>
+		        	<usertab>
+		        		<users/>
+		        		<login/>
+		        	</usertab>
+		        </user>
+		        <control>
+		        	<control_control>
+		        		<newform/>
+		        	</control_control>
+		        </control>
+		        <oralhistory>
+	 				<recordingtab>
+	 					<person/>
+	 					<languagegroup/>
+	 					<clangroup/>
+	 					<skin/>
+	 					<birthplace/>
+	 					<parentsbirthplace/>
+	 					<marriagepartners/>
+	 					<marriagepartnersskin/>
+	 					<ageorrelationship/>
+	 					<livingplaces/>
+	 				</recordingtab>
+	 				<interviewdetails>
+	 					<date/>
+	 					<place/>
+	 					<time/>
+	 					<interviewer/>
+	 					<recorded/>
+	 				</interviewdetails>
+	 				<subjects>
+	 					<mainsubjects/>
+	 				</subjects>
+	 			</oralhistory>
+ 			</faims>
+ 		</instance>
+
+ 		<bind nodeset="/faims/oralhistory/recordingtab/person" type="string"/>
+ 		<bind nodeset="/faims/oralhistory/recordingtab/languagegroup" type="string"/>
+ 		<bind nodeset="/faims/oralhistory/recordingtab/clangroup" type="string"/>
+ 		<bind nodeset="/faims/oralhistory/recordingtab/skin" type="string"/>
+ 		<bind nodeset="/faims/oralhistory/recordingtab/birthplace" type="string" />
+ 		<bind nodeset="/faims/oralhistory/recordingtab/parentsbirthplace" type="string"/>
+ 		<bind nodeset="/faims/oralhistory/recordingtab/marriagepartners" type="string"/>
+ 		<bind nodeset="/faims/oralhistory/recordingtab/marriagepartnersskin" type="string"/>
+ 		<bind nodeset="/faims/oralhistory/recordingtab/ageorrelationship" type="string"/>
+ 		<bind nodeset="/faims/oralhistory/recordingtab/livingplaces" type="string"/>
+ 		<bind nodeset="/faims/oralhistory/interviewdetails/date" type="string"/>
+ 		<bind nodeset="/faims/oralhistory/interviewdetails/place" type="string"/>
+ 		<bind nodeset="/faims/oralhistory/interviewdetails/time" type="string"/>
+ 		<bind nodeset="/faims/oralhistory/interviewdetails/interviewer" type="string"/>
+ 		<bind nodeset="/faims/oralhistory/interviewdetails/recorded" type="string"/>
+ 		<bind nodeset="/faims/oralhistory/subjects/mainsubjects" type="string"/>
+
+ 	</model>
+ 	</h:head>
+
+ 	<h:body>
+ 		<group ref="user">
+ 			<label>User List</label>
+ 			<group ref="usertab">
+ 				<label>User List</label>
+ 				<select1 appearance="compact" ref="users" faims_style_class="user-list">
+		          <label>Users:</label>
+		          <item>
+		            <label>placeholder</label>
+		            <value>placeholder</value>
+		          </item>
+		        </select1>
+        		<!--<trigger ref="login">
+          			<label>Login</label>
+        		</trigger>-->
+			</group>
+		</group>
+		<group ref="control">
+			<label>Control</label>
+			<group ref="control_control">
+				<label>Control Control</label>
+				<trigger ref="newform" faims_style_class="faims-blue">
+					<label>New Oral History Form</label>
+				</trigger>
+			</group>
+		</group>
+ 		<group ref="oralhistory">
+ 			<label>Form</label>
+	 		<group ref="recordingtab">
+	 			<label>Recording Form</label>
+	 			<input ref="person" faims_attribute_name="Person" faims_attribute_type="measure">
+	 				<label>PERSON:</label>
+	 			</input>
+	 			<input ref="languagegroup" faims_attribute_name="Language Group" faims_attribute_type="measure">
+	 				<label>LANGUAGE GROUP:</label>
+	 			</input>
+	 			<input ref="clangroup" faims_attribute_name="Clan Group" faims_attribute_type="measure">
+	 				<label>CLAN GROUP:</label>
+	 			</input>
+	 			<input ref="skin" faims_attribute_name="Skin" faims_attribute_type="measure">
+	 				<label>SKIN:</label>
+	 			</input>
+	 			<input ref="birthplace" faims_attribute_name="Birth Place" faims_attribute_type="measure">
+	 				<label>BIRTH PLACE:</label>
+	 			</input>
+	 			<input ref="parentsbirthplace" faims_attribute_name="Parents Birth Place" faims_attribute_type="measure">
+	 				<label>PARENTS' BIRTH PLACE:</label>
+	 			</input>
+	 			<input ref="marriagepartners" faims_attribute_name="Marriage Partners" faims_attribute_type="measure">
+	 				<label>MARRIAGE PARTNERS(S):</label>
+	 			</input>
+	 			<input ref="marriagepartnersskin" faims_attribute_name="Partner Skin" faims_attribute_type="measure">
+	 				<label>SKIN:</label>
+	 			</input>
+	 			<input ref="ageorrelationship" faims_attribute_name="Age Or Relationship To Known Events" faims_attribute_type="measure">
+	 				<label>AGE OR RELATIONSHIP TO KNOWN EVENTS:</label>
+	 			</input>
+	 			<input ref="livingplaces" faims_attribute_name="Places Theyve Lived In" faims_attribute_type="measure">
+	 				<label>PLACES THEY'VE LIVED IN:</label>
+	 			</input>
+	 		</group>
+	 		<group ref="interviewdetails">
+	 			<label>Interview Details</label>
+	 			<input ref="date" faims_attribute_name="Date" faims_attribute_type="measure">
+	 				<label>DATE:</label>
+	 			</input>
+	 			<input ref="place" faims_attribute_name="Place" faims_attribute_type="measure">
+	 				<label>PLACE:</label>
+	 			</input>
+	 			<input ref="time" faims_attribute_name="Time" faims_attribute_type="measure">
+	 				<label>TIME:</label>
+	 			</input>
+	 			<input ref="interviewer" faims_attribute_name="Interviewer" faims_attribute_type="meausre">
+	 				<label>INTERVIEWER:</label>
+	 			</input>
+	 			<select ref="recorded" faims_attribute_name="Recorded" faims_attribute_type="vocab">
+	 				<label/>
+	 				<item>
+	 					<label>Recorded</label>
+	 					<value>0</value>
+	 				</item>
+	 				<item>
+	 					<label>Notes only</label>
+	 					<value>1</value>
+	 				</item>
+	 			</select>
+	 		</group>
+	 		<group ref="subjects">
+	 			<label>Main Subjects</label>
+	 			<input ref="mainsubjects" faims_attribute_name="Main Subjects" faims_attribute_type="measure">
+	 				<label>MAIN SUBJECTS COVERED:</label>
+	 			</input>
+	 		</group>
+ 		</group>
+ 	</h:body>
+</h:html>

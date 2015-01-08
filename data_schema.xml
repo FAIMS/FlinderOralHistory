@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSchema>
+	<ArchaeologicalElement name="Oral History">
+		<description>
+			An oral history recording form
+		</description>
+		<property type="string" name="Person">
+			<description> Person </description>
+		</property>
+		<property type="string" name="Language Group">
+			<description>TBD</description>
+		</property>
+		<property type="string" name="Clan Group">
+			<description>TBD</description>
+		</property>
+		<property type="string" name="Skin">
+			<description>TBD</description>
+		</property>
+		<property type="string" name="Birth Place">
+			<description>TBD</description>
+		</property>
+		<property type="string" name="Parents Birth Place"> <!-- test ' in name attr-->
+			<description>TBD</description>
+		</property>
+		<property type="string" name="Marriage Partner(s)">
+			<description>TBD</description>
+		</property>
+		<property type="string" name="Partner Skin">
+			<description>TBD</description>
+		</property>
+		<property type="string" name="Age Or Relationship To Known Events">
+			<description>TBD</description>
+		</property>
+		<property type="string" name="Places Theyve Lived In"> <!-- test ' in name attr-->
+			<description>TBD</description>
+		</property>
+	</ArchaeologicalElement>
+
+	<ArchaeologicalElement name="Interview Details">
+		<description> 
+			Details about the interview
+		</description>
+		<property type="string" name="Date">
+			<description>TBD</description>
+		</property>
+		<property type="string" name="Place">
+			<description>TBD</description>
+		</property>
+		<property type="string" name="Time">
+			<description>TBD</description>
+		</property>
+		<property type="string" name="Interviewer">
+			<description>TBD</description>
+		</property>
+		<property type="string" name="Recorded">
+			<description>TBD</description>
+		</property>
+		<property type="string" name="Notes only">
+			<description>TBD</description>
+		</property>
+	</ArchaeologicalElement>
+
+	<ArchaeologicalElement name="Main Subjects Covered">
+		<description>
+			Main subjects covered in the interview
+		</description>
+		<property type="string" name="main subjects">
+			<description>TBD</description>
+		</property>
+	</ArchaeologicalElement>
+</dataSchema>
