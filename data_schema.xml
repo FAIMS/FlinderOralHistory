@@ -34,12 +34,7 @@
 		<property type="string" name="Places Theyve Lived In"> <!-- test ' in name attr-->
 			<description>TBD</description>
 		</property>
-	</ArchaeologicalElement>
 
-	<ArchaeologicalElement name="Interview Details">
-		<description> 
-			Details about the interview
-		</description>
 		<property type="string" name="Date">
 			<description>TBD</description>
 		</property>
@@ -58,13 +53,8 @@
 		<property type="string" name="Notes only">
 			<description>TBD</description>
 		</property>
-	</ArchaeologicalElement>
 
-	<ArchaeologicalElement name="Main Subjects Covered">
-		<description>
-			Main subjects covered in the interview
-		</description>
-		<property type="string" name="main subjects">
+		<property type="string" name="Main Subjects">
 			<description>TBD</description>
 		</property>
 	</ArchaeologicalElement>

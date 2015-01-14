@@ -29,9 +29,13 @@
 		        <control>
 		        	<control_control>
 		        		<newform/>
+		        		<formlist/>
 		        	</control_control>
 		        </control>
 		        <oralhistory>
+		        	<savetab>
+		        		<saveform/>
+		        	</savetab>
 	 				<recordingtab>
 	 					<person/>
 	 					<languagegroup/>
@@ -102,10 +106,23 @@
 				<trigger ref="newform" faims_style_class="faims-blue">
 					<label>New Oral History Form</label>
 				</trigger>
+				<select1 ref="formlist" appearance="compact"> 
+					<label>Load Form</label>
+					<item>
+						<label>placeholder</label>
+						<value>placeholder</value>
+					</item>
+				</select1>
 			</group>
 		</group>
- 		<group ref="oralhistory">
+ 		<group ref="oralhistory" faims_archent_type="Oral History">
  			<label>Form</label>
+ 			<group ref="savetab">
+ 				<label>Save Form</label>
+ 				<trigger ref="saveform">
+ 					<label>Save</label>
+ 				</trigger>
+ 			</group>
 	 		<group ref="recordingtab">
 	 			<label>Recording Form</label>
 	 			<input ref="person" faims_attribute_name="Person" faims_attribute_type="measure">
@@ -126,7 +143,7 @@
 	 			<input ref="parentsbirthplace" faims_attribute_name="Parents Birth Place" faims_attribute_type="measure">
 	 				<label>PARENTS' BIRTH PLACE:</label>
 	 			</input>
-	 			<input ref="marriagepartners" faims_attribute_name="Marriage Partners" faims_attribute_type="measure">
+	 			<input ref="marriagepartners" faims_attribute_name="Marriage Partner(s)" faims_attribute_type="measure">
 	 				<label>MARRIAGE PARTNERS(S):</label>
 	 			</input>
 	 			<input ref="marriagepartnersskin" faims_attribute_name="Partner Skin" faims_attribute_type="measure">
@@ -150,7 +167,7 @@
 	 			<input ref="time" faims_attribute_name="Time" faims_attribute_type="measure">
 	 				<label>TIME:</label>
 	 			</input>
-	 			<input ref="interviewer" faims_attribute_name="Interviewer" faims_attribute_type="meausre">
+	 			<input ref="interviewer" faims_attribute_name="Interviewer" faims_attribute_type="measure">
 	 				<label>INTERVIEWER:</label>
 	 			</input>
 	 			<select ref="recorded" faims_attribute_name="Recorded" faims_attribute_type="vocab">

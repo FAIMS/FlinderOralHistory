@@ -4,16 +4,40 @@ User user; // don't touch
 String userid;
 
 /** Oral History Form Logic **/
-newOralHistoryForm() {
-	showTabGroup("oralhistory");
-}
-onEvent("control/control_control/newform", "click", "newOralHistoryForm()");
-
-
 makeLocalID() {
     fetchOne("CREATE TABLE IF NOT EXISTS localSettings (key text primary key, value text);", null);
 }
 makeLocalID();
+
+form_id = null;
+
+newForm() {
+    form_id = null;
+    showTabGroup("oralhistory");
+}
+
+update() {
+
+}
+
+saveForm() {
+    //callback = "form_id = getLastSavedRecordId(); update();";
+    callback = new SaveCallback() {
+                onSave(uuid, newRecord) {
+                    form_id = uuid;
+                }
+            };
+    saveTabGroup("oralhistory", form_id, null, null, callback);
+}
+
+loadForm() {
+    //form_id = ;
+    showTabGroup("oralhistory", form_id);
+}
+
+onEvent("control/control_control/newform", "click", "newForm()");
+onEvent("control/control_control/loadform", "click", "loadForm()");
+onEvent("oralhistory/savetab/saveform", "click", "saveForm()");
 
 /*** MISC ***/
 
