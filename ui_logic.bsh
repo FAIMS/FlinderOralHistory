@@ -90,6 +90,25 @@ updateGPSDiagnostics() {
     setFieldValue(gpsDiagnosticsRef, status);
 }
 
+
+onEvent("oralhistory/recordingtab/TakeGPS", "click", "takeFromGPS()");
+takeFromGPS(){
+  Object position = getGPSPosition();
+  Object projPosition = getGPSPositionProjected();
+  if (projPosition != null ){
+    Double latitude = position.getLatitude();
+    Double longitude = position.getLongitude();
+    Double northing = projPosition.getLatitude();
+    Double easting = projPosition.getLongitude();
+    setFieldValue("oralhistory/interviewdetails/Latitude", latitude);
+    setFieldValue("oralhistory/interviewdetails/Longitude", longitude);
+    setFieldValue("oralhistory/interviewdetails/Northing", northing);
+    setFieldValue("oralhistory/interviewdetails/Easting", easting);
+  } else {
+    showToast("{GPS_Not_initialized}");
+  }
+}
+
 /******************************************************************************/
 /**                                ACTION BAR                                **/
 /******************************************************************************/
@@ -278,6 +297,7 @@ login() {
 onEvent("oralhistory/savetab/saveform", "click" , "saveForm()");
 
 saveForm() {
+    Boolean enableAutosave = true;
     updateFormId = new SaveCallback() {
         onSave(uuid, newRecord) {
             showWarning("Changes saved!", "Changes saved!");
@@ -287,5 +307,5 @@ saveForm() {
             showWarning("", message);
         }
     };
-    saveTabGroup("oralhistory", form_id, null, null, updateFormId);
+    saveTabGroup("oralhistory", form_id, null, null, updateFormId, enableAutosave);
 }

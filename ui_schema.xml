@@ -12,9 +12,9 @@
             <even>
               <layout_weight/>
             </even>
-            <leftBigger>
+            <large>
               <layout_weight/>
-            </leftBigger>
+            </large>
           </style>
           <user>
             <usertab>
@@ -44,6 +44,17 @@
               <marriagepartnersskin/>
               <ageorrelationship/>
               <livingplaces/>
+              <TakeGPS/>
+              <container3>
+                <child1>
+                  <Latitude/>
+                  <Northing/>
+                </child1>
+                <child2>
+                  <Longitude/>
+                  <Easting/>
+                </child2>
+              </container3>
             </recordingtab>
             <interviewdetails>
               <date/>
@@ -62,6 +73,27 @@
     </model>
   </h:head>
   <h:body>
+    <group ref="style">
+      <label/>
+      <group ref="orientation">
+        <label/>
+        <input ref="orientation">
+          <label>horizontal</label>
+        </input>
+      </group>
+      <group ref="even">
+        <label/>
+        <input ref="layout_weight">
+          <label>1</label>
+        </input>
+      </group>
+      <group ref="large">
+        <label/>
+        <input ref="layout_weight">
+          <label>3</label>
+        </input>
+      </group>
+    </group>
     <group ref="user">
       <label>User List</label>
       <group ref="usertab">
@@ -137,6 +169,30 @@
         <input ref="livingplaces" faims_attribute_name="Places Theyve Lived In" faims_attribute_type="measure">
           <label>PLACES THEY'VE LIVED IN:</label>
         </input>
+        <trigger ref="TakeGPS">
+          <label>{Take_From_GPS}</label>
+        </trigger>
+        <group faims_style="orientation" ref="container3">
+          <label/>
+          <group faims_style="even" ref="child1">
+            <label/>
+            <input faims_attribute_name="Latitude" faims_attribute_type="measure" faims_read_only="false" ref="Latitude">
+              <label>{Latitude}</label>
+            </input>
+            <input ref="Northing" faims_attribute_name="Northing" faims_attribute_type="measure" faims_certainty="true" faims_annotation="true">
+              <label>{Northing}</label>
+            </input>
+          </group>
+          <group faims_style="even" ref="child2">
+            <label/>
+            <input faims_attribute_name="Longitude" faims_attribute_type="measure" faims_read_only="false" ref="Longitude">
+              <label>{Longitude}</label>
+            </input>
+            <input ref="Easting" faims_attribute_name="Easting" faims_attribute_type="measure" faims_certainty="true" faims_annotation="true">
+              <label>{Easting}</label>
+            </input>
+          </group>
+        </group>
       </group>
       <group ref="interviewdetails">
         <label>Interview Details</label>
