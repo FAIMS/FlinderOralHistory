@@ -58,22 +58,7 @@
           </oralhistory>
         </faims>
       </instance>
-      <bind nodeset="/faims/oralhistory/recordingtab/person" type="string"/>
-      <bind nodeset="/faims/oralhistory/recordingtab/languagegroup" type="string"/>
-      <bind nodeset="/faims/oralhistory/recordingtab/clangroup" type="string"/>
-      <bind nodeset="/faims/oralhistory/recordingtab/skin" type="string"/>
-      <bind nodeset="/faims/oralhistory/recordingtab/birthplace" type="string"/>
-      <bind nodeset="/faims/oralhistory/recordingtab/parentsbirthplace" type="string"/>
-      <bind nodeset="/faims/oralhistory/recordingtab/marriagepartners" type="string"/>
-      <bind nodeset="/faims/oralhistory/recordingtab/marriagepartnersskin" type="string"/>
-      <bind nodeset="/faims/oralhistory/recordingtab/ageorrelationship" type="string"/>
-      <bind nodeset="/faims/oralhistory/recordingtab/livingplaces" type="string"/>
-      <bind nodeset="/faims/oralhistory/interviewdetails/date" type="string"/>
-      <bind nodeset="/faims/oralhistory/interviewdetails/place" type="string"/>
-      <bind nodeset="/faims/oralhistory/interviewdetails/time" type="string"/>
-      <bind nodeset="/faims/oralhistory/interviewdetails/interviewer" type="string"/>
-      <bind nodeset="/faims/oralhistory/interviewdetails/recorded" type="string"/>
-      <bind nodeset="/faims/oralhistory/subjects/mainsubjects" type="string"/>
+
     </model>
   </h:head>
   <h:body>
@@ -89,8 +74,8 @@
           </item>
         </select1>
         <!--<trigger ref="login">
-          			<label>Login</label>
-        		</trigger>-->
+                <label>Login</label>
+            </trigger>-->
       </group>
     </group>
     <group ref="control">

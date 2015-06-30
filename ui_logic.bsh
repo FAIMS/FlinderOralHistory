@@ -214,7 +214,7 @@ loadList() {
 
     populateCursorList(
         "control/control_control/formlist",
-        "select uuid, response from latestNonDeletedArchEntFormattedIdentifiers where aenttypename = 'Oral History' limit ? offset ?;",
+        "select uuid, response from latestNonDeletedArchEntFormattedIdentifiers join createdmodifiedatby using (uuid) where aenttypename = 'Oral History' order by createdat desc limit ? offset ?;",
         25
     );
 }
