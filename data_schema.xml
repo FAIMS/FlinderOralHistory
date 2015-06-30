@@ -4,10 +4,10 @@
 		<description>
 			An oral history recording form
 		</description>
-		<property type="string" name="Person">
+		<property type="string" name="Person" isIdentifer="true">
 			<description> Person </description>
 		</property>
-		<property type="string" name="Language Group">
+		<property type="string" name="Language Group" isIdentifer="true">
 			<description>TBD</description>
 		</property>
 		<property type="string" name="Clan Group">
@@ -35,10 +35,10 @@
 			<description>TBD</description>
 		</property>
 
-		<property type="string" name="Date">
+		<property type="string" name="Date" isIdentifer="true">
 			<description>TBD</description>
 		</property>
-		<property type="string" name="Place">
+		<property type="string" name="Place" isIdentifer="true">
 			<description>TBD</description>
 		</property>
 		<property type="string" name="Time">
