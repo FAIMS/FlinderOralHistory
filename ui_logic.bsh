@@ -100,14 +100,26 @@ takeFromGPS(){
     Double longitude = position.getLongitude();
     Double northing = projPosition.getLatitude();
     Double easting = projPosition.getLongitude();
-    setFieldValue("oralhistory/interviewdetails/Latitude", latitude);
-    setFieldValue("oralhistory/interviewdetails/Longitude", longitude);
-    setFieldValue("oralhistory/interviewdetails/Northing", northing);
-    setFieldValue("oralhistory/interviewdetails/Easting", easting);
+    setFieldValue("oralhistory/recordingtab/Latitude", latitude);
+    setFieldValue("oralhistory/recordingtab/Longitude", longitude);
+    setFieldValue("oralhistory/recordingtab/Northing", northing);
+    setFieldValue("oralhistory/recordingtab/Easting", easting);
   } else {
     showToast("{GPS_Not_initialized}");
   }
 }
+
+
+String getAttributeVocabQuery = "SELECT vocabid, vocabname "+
+                                  "  FROM vocabulary "+
+                                  "  JOIN attributekey USING (attributeid) "+
+                                  " WHERE attributename = 'Recorded' "+
+                                  " ORDER BY vocabcountorder;";
+  fetchAll(getAttributeVocabQuery,
+    new FetchCallback() {
+      onFetch(result) {
+        populateRadioGroup("oralhistory/interviewdetails/recorded", result);
+    }});
 
 /******************************************************************************/
 /**                                ACTION BAR                                **/

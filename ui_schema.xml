@@ -255,17 +255,13 @@
         <input ref="interviewer" faims_attribute_name="Interviewer" faims_attribute_type="measure">
           <label>INTERVIEWER:</label>
         </input>
-        <select ref="recorded" faims_attribute_name="Recorded" faims_attribute_type="vocab">
-          <label/>
-          <item>
-            <label>Recorded</label>
-            <value>0</value>
+        <select1 ref="recorded" faims_attribute_name="Recorded" faims_attribute_type="vocab" appearance="full" >
+          <label>Recorded?</label>
+           <item>
+            <label>placeholder</label>
+            <value>placeholder</value>
           </item>
-          <item>
-            <label>Notes only</label>
-            <value>1</value>
-          </item>
-        </select>
+        </select1>
       </group>
       <group ref="subjects">
         <label>Main Subjects</label>

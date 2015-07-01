@@ -6,56 +6,68 @@
 		</description>
     <property type="string" name="Person" isIdentifier="true">
       <description> Person </description>
+      <formatString><![CDATA[$2 - ]]></formatString>
+
     </property>
     <property type="string" name="Language Group" isIdentifier="true">
-      <description>TBD</description>
+      <description></description>
+      <formatString><![CDATA[$2 - ]]></formatString>
+
     </property>
     <property type="string" name="Clan Group">
-      <description>TBD</description>
+      <description></description>
     </property>
     <property type="string" name="Skin">
-      <description>TBD</description>
+      <description></description>
     </property>
     <property type="string" name="Birth Place">
-      <description>TBD</description>
+      <description></description>
     </property>
     <property type="string" name="Parents Birth Place">
       <!-- test ' in name attr-->
-      <description>TBD</description>
+      <description></description>
     </property>
     <property type="string" name="Marriage Partner(s)">
-      <description>TBD</description>
+      <description></description>
     </property>
     <property type="string" name="Partner Skin">
-      <description>TBD</description>
+      <description></description>
     </property>
     <property type="string" name="Age Or Relationship To Known Events">
-      <description>TBD</description>
+      <description></description>
     </property>
     <property type="string" name="Places Theyve Lived In">
       <!-- test ' in name attr-->
-      <description>TBD</description>
+      <description></description>
     </property>
     <property type="string" name="Date" isIdentifier="true">
-      <description>TBD</description>
+      <description></description>
+      <formatString><![CDATA[$2 - ]]></formatString>
+
     </property>
     <property type="string" name="Place" isIdentifier="true">
-      <description>TBD</description>
+      <description></description>
+      <formatString><![CDATA[$2]]></formatString>
+
     </property>
     <property type="string" name="Time">
-      <description>TBD</description>
+      <description></description>
     </property>
     <property type="string" name="Interviewer">
-      <description>TBD</description>
+      <description></description>
     </property>
     <property type="string" name="Recorded">
-      <description>TBD</description>
+      <description></description>
+      <lookup>
+      	<term>Recorded</term>
+      	<term>Notes Only</term>
+      	<term>Other</term>
+      </lookup>
+
     </property>
-    <property type="string" name="Notes only">
-      <description>TBD</description>
-    </property>
+    
     <property type="string" name="Main Subjects">
-      <description>TBD</description>
+      <description></description>
     </property>
     <property name="Latitude" type="float">
       <description>The geographic latitude of the Special Find at the time of excavation.
@@ -82,29 +94,6 @@
   </ArchaeologicalElement>
   <ArchaeologicalElement name="Diary">
     <description/>
-    <property name="AreaCode" type="enum" isIdentifier="true">
-      <description>The excavation trench, designated by a letter code and assigned automatically by the module.</description>
-      <formatString><![CDATA[$1-]]></formatString>
-      <appendCharacterString><![CDATA[-]]></appendCharacterString>
-      <lookup>
-        <term>H
-        <description/></term>
-        <term>K 
-        <description/></term>
-        <term>L 
-        <description/></term>
-        <term>M 
-        <description/></term>
-        <term>N 
-        <description/></term>
-        <term>P 
-        <description/></term>
-        <term>Q
-        <description/></term>
-        <term>X
-        <description/></term>
-      </lookup>
-    </property>
     <property name="Timestamp" type="freetext" isIdentifier="true">
       <description/>
       <formatString><![CDATA[ $2 by: ]]></formatString>
