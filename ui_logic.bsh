@@ -209,6 +209,7 @@ onEvent("control/control_control"          , "show"  , "updateGPSDiagnostics()")
 onEvent("control/control_control/formlist" , "click" , "loadForm()");
 onEvent("control/control_control/formlist" , "show"  , "loadList()");
 onEvent("control/control_control/newform"  , "click" , "newForm()");
+onEvent("control/control_control/newDiary" , "click" , "newDiary()");
 
 form_id = null;
 
@@ -243,6 +244,10 @@ loadList() {
         fetchEntities,
         25
     );
+}
+
+newDiary() {
+    showTabGroup("Diary");
 }
 
 /******************************************************************************/
@@ -309,7 +314,6 @@ saveForm() {
     Boolean enableAutosave = true;
     updateFormId = new SaveCallback() {
         onSave(uuid, newRecord) {
-            showWarning("Changes saved!", "Changes saved!");
             form_id = uuid;
         }
         onError(message) {
@@ -322,5 +326,21 @@ saveForm() {
 /******************************************************************************/
 /**                             DIARY TAB GROUP                              **/
 /******************************************************************************/
-onEvent("Diary/Diary/attachAudio", "click", "attachAudioTo(\"Diary/Diary/Audio\")");
-onEvent("Diary/Diary/attachVideo", "click", "attachVideoTo(\"Diary/Diary/Video\")");
+onEvent("Diary/Diary/attachAudio" , "click" , "attachAudioTo(\"Diary/Diary/Audio\")");
+onEvent("Diary/Diary/attachVideo" , "click" , "attachVideoTo(\"Diary/Diary/Video\")");
+onEvent("Diary"                   , "show"  , "saveDiary()");
+
+diary_id = null;
+
+saveDiary() {
+    Boolean enableAutosave = true;
+    updateFormId = new SaveCallback() {
+        onSave(uuid, newRecord) {
+            diary_id = uuid;
+        }
+        onError(message) {
+            showWarning("", message);
+        }
+    };
+    saveTabGroup("Diary", diary_id, null, null, updateFormId, enableAutosave);
+}

@@ -26,6 +26,7 @@
             <control_control>
               <newform/>
               <formlist/>
+              <newDiary/>
               <GPS_Diagnostics/>
             </control_control>
           </control>
@@ -152,6 +153,9 @@
         <input ref="GPS_Diagnostics" faims_certainty="false" faims_annotation="false" faims_read_only="true">
           <label>{GPS_Diagnostics}</label>
         </input>
+        <trigger ref="newDiary">
+          <label>{New_Diary}</label>
+        </trigger>
       </group>
     </group>
     <group ref="oralhistory" faims_archent_type="Oral History">
