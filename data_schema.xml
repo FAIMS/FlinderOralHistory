@@ -111,7 +111,7 @@
     </property>
     <property name="CreatedName" type="freetext" isIdentifier="true">
       <description/>
-      <formatString><![CDATA[$2 - Diary:]]></formatString>
+      <formatString><![CDATA[$2 - Diary: ]]></formatString>
       <appendCharacterString><![CDATA[-]]></appendCharacterString>
     </property>
     <property name="Title" type="freetext" isIdentifier="true">

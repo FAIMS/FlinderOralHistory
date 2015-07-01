@@ -205,17 +205,17 @@ addActionBarItem("external gps", new ToggleActionButtonCallback() {
 /******************************************************************************/
 /**                            CONTROL TAB GROUP                             **/
 /******************************************************************************/
-onEvent("control/control_control"          , "show"  , "updateGPSDiagnostics()");
-onEvent("control/control_control/formlist" , "click" , "loadForm()");
-onEvent("control/control_control/formlist" , "show"  , "loadList()");
-onEvent("control/control_control/newform"  , "click" , "newForm()");
-onEvent("control/control_control/newDiary" , "click" , "newDiary()");
+onEvent("control/control_control"              , "show"  , "initSearch(); loadSearch(); updateGPSDiagnostics();");
+onEvent("control/control_control/Sample_List"  , "click" , "loadSample();");
+onEvent("control/control_control/Sample_Types" , "click" , "loadSearch();");
+onEvent("control/control_control/newDiary"     , "click" , "newDiary()");
+onEvent("control/control_control/newform"      , "click" , "newForm()");
 
 form_id = null;
 
 newForm() {
     form_id = null;
-    showTabGroup("oralhistory");
+    newTabGroup("oralhistory");
 }
 
 loadForm() {
@@ -224,14 +224,6 @@ loadForm() {
 }
 
 loadList() {
-    //List listEntries = new ArrayList();
-
-    //String entryName = "First entry";// The user sees this
-    //String entryUuid = null;         // This is generally the UUID of an archEnt
-    //listEntries.add(new NameValuePair(entryName, entryUuid));
-
-    //populateList("control/control_control/formlist", listEntries);
-
     String fetchEntities = "" +
         "SELECT   uuid, response " +
         "FROM     latestNonDeletedArchEntFormattedIdentifiers " +
@@ -239,6 +231,7 @@ loadList() {
         "USING    (uuid) " +
         "WHERE    aenttypename = 'Oral History' " +
         "ORDER BY createdat DESC limit ? offset ?";
+
     populateCursorList(
         "control/control_control/formlist",
         fetchEntities,
@@ -246,8 +239,63 @@ loadList() {
     );
 }
 
+setMonthDay(String path) {
+    setFieldValue(path, new java.text.SimpleDateFormat("MMM dd").format(new Date()));
+}
+
 newDiary() {
-    showTabGroup("Diary");
+    diary_id = null;
+    newTabGroup("Diary");
+    setMonthDay("Diary/Diary/Timestamp");
+    setFieldValue("Diary/Diary/CreatedBy", username);
+}
+
+initSearch() {
+    List sample_types = new ArrayList();
+    sample_types.add(new NameValuePair("{Oral_History}", "Oral History"));
+    sample_types.add(new NameValuePair("{Diary}"       , "Diary"));
+    populateDropDown("control/control_control/Sample_Types", sample_types);
+}
+
+loadSearch() {
+    String type = getFieldValue("control/control_control/Sample_Types");
+    populateCursorList(
+        "control/control_control/Sample_List",
+        "select uuid, response from latestNonDeletedArchEntFormattedIdentifiers where aenttypename like '%" + type + "%' limit ? offset ?;",
+        25
+    );
+}
+
+loadSample() {
+    String sampleID = getListItemValue();
+    if (isNull(sampleID)) {
+        return;
+    }
+
+    String fetchArchentType = "" +
+        "SELECT aenttypename " +
+        "FROM   latestnondeletedarchent " +
+        "JOIN   aenttype " +
+        "USING  (aenttypeid) " +
+        "WHERE  uuid = '" + sampleID + "'";
+
+    fetchAll(fetchArchentType ,
+     new FetchCallback() {
+        onFetch(result) {
+            form_id  = null;
+            diary_id = null;
+
+            if (result.get(0).get(0).equals("Oral History")) {
+                form_id = sampleID;
+                showTabGroup("oralhistory", form_id);
+            } else if (result.get(0).get(0).equals("Diary")) {
+                diary_id = sampleID;
+                showTabGroup("Diary", diary_id);
+            } else {
+                showWarning("Uh-oh!", "Something bad happened in loadSample()");
+            }
+        }
+    });
 }
 
 /******************************************************************************/

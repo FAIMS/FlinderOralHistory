@@ -25,9 +25,10 @@
           <control>
             <control_control>
               <newform/>
-              <formlist/>
               <newDiary/>
               <GPS_Diagnostics/>
+              <Sample_Types/>
+              <Sample_List/>
             </control_control>
           </control>
           <oralhistory>
@@ -80,7 +81,6 @@
                 </right>
               </colgroup>
               <Title/>
-              <Area_Code/>
               <Text/>
               <Sketch/>
               <attachSketch/>
@@ -131,31 +131,35 @@
             <value>placeholder</value>
           </item>
         </select1>
-        <!--<trigger ref="login">
-                <label>Login</label>
-            </trigger>-->
       </group>
     </group>
     <group ref="control">
       <label>Control</label>
-      <group ref="control_control">
+      <group ref="control_control" faims_scrollable="false">
         <label>Control Control</label>
         <trigger ref="newform" faims_style_class="faims-blue">
           <label>New Oral History Form</label>
         </trigger>
-        <select1 ref="formlist" appearance="compact">
-          <label>Load Form</label>
+        <trigger ref="newDiary">
+          <label>{New_Diary}</label>
+        </trigger>
+        <input ref="GPS_Diagnostics" faims_certainty="false" faims_annotation="false" faims_read_only="true">
+          <label>{GPS_Diagnostics}</label>
+        </input>
+        <select1 ref="Sample_Types" faims_certainty="false" faims_annotation="false">
+          <label>{Sample_Types}</label>
           <item>
             <label>placeholder</label>
             <value>placeholder</value>
           </item>
         </select1>
-        <input ref="GPS_Diagnostics" faims_certainty="false" faims_annotation="false" faims_read_only="true">
-          <label>{GPS_Diagnostics}</label>
-        </input>
-        <trigger ref="newDiary">
-          <label>{New_Diary}</label>
-        </trigger>
+        <select1 appearance="compact" ref="Sample_List" faims_certainty="false" faims_annotation="false">
+          <label>{Sample_List}</label>
+          <item>
+            <label>placeholder</label>
+            <value>placeholder</value>
+          </item>
+        </select1>
       </group>
     </group>
     <group ref="oralhistory" faims_archent_type="Oral History">
@@ -292,13 +296,6 @@
         <input faims_attribute_name="Title" faims_attribute_type="measure" faims_read_only="false" ref="Title" faims_certainty="false">
           <label>{Title}</label>
         </input>
-        <select1 faims_annotation="false" faims_attribute_name="AreaCode" faims_attribute_type="vocab" faims_certainty="false" faims_read_only="false" ref="Area_Code" faims_style_class="sharedwithvocab">
-          <label>{AreaCode}</label>
-          <item>
-            <label>{placeholder}</label>
-            <value>placeholder</value>
-          </item>
-        </select1>
         <input faims_attribute_name="Text" faims_attribute_type="measure" faims_read_only="false" ref="Text">
           <label>{Text}</label>
         </input>
