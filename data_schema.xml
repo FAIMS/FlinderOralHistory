@@ -57,6 +57,28 @@
     <property type="string" name="Main Subjects">
       <description>TBD</description>
     </property>
+    <property name="Latitude" type="float">
+      <description>The geographic latitude of the Special Find at the time of excavation.
+      </description>
+    </property>
+    <property name="Longitude" type="float">
+      <description>The geographic longitude of the Special Find at the time of excavation.
+      </description>
+    </property>
+    <property name="Northing" type="float">
+      <description>The geographic northing of the Special Find at the time of excavation.
+      </description>
+    </property>
+    <property name="Easting" type="float">
+      <description>The geographic easting of the Special Find at the time of excavation.
+      </description>
+    </property>
+    <property name="Oral History Audio" type="file" file="true" thumbnail="true">
+      <description>Use this button to record an audio file of your observations concerning this context/artefact</description>
+    </property>
+    <property name="Oral History Video" type="file" file="true" thumbnail="true">
+      <description>Use this button to record a video using the tablet of this context/artefact etc</description>
+    </property>
   </ArchaeologicalElement>
   <ArchaeologicalElement name="Diary">
     <description/>

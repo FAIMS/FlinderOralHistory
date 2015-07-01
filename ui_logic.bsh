@@ -301,7 +301,9 @@ login() {
 /******************************************************************************/
 /**                          ORAL HISTORY TAB GROUP                          **/
 /******************************************************************************/
-onEvent("oralhistory/savetab/saveform", "click" , "saveForm()");
+onEvent("oralhistory/recordingtab/attachAudio", "click", "attachAudioTo(\"oralhistory/recordingtab/Audio\")");
+onEvent("oralhistory/recordingtab/attachVideo", "click", "attachVideoTo(\"oralhistory/recordingtab/Video\")");
+onEvent("oralhistory"                         , "show",  "saveForm()");
 
 saveForm() {
     Boolean enableAutosave = true;
@@ -316,3 +318,9 @@ saveForm() {
     };
     saveTabGroup("oralhistory", form_id, null, null, updateFormId, enableAutosave);
 }
+
+/******************************************************************************/
+/**                             DIARY TAB GROUP                              **/
+/******************************************************************************/
+onEvent("Diary/Diary/attachAudio", "click", "attachAudioTo(\"Diary/Diary/Audio\")");
+onEvent("Diary/Diary/attachVideo", "click", "attachVideoTo(\"Diary/Diary/Video\")");
