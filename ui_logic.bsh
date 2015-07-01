@@ -231,9 +231,16 @@ loadList() {
 
     //populateList("control/control_control/formlist", listEntries);
 
+    String fetchEntities = "" +
+        "SELECT   uuid, response " +
+        "FROM     latestNonDeletedArchEntFormattedIdentifiers " +
+        "JOIN     createdmodifiedatby " +
+        "USING    (uuid) " +
+        "WHERE    aenttypename = 'Oral History' " +
+        "ORDER BY createdat DESC limit ? offset ?";
     populateCursorList(
         "control/control_control/formlist",
-        "select uuid, response from latestNonDeletedArchEntFormattedIdentifiers join createdmodifiedatby using (uuid) where aenttypename = 'Oral History' order by createdat desc limit ? offset ?;",
+        fetchEntities,
         25
     );
 }

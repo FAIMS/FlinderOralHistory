@@ -67,6 +67,30 @@
               <mainsubjects/>
             </subjects>
           </oralhistory>
+          <Diary>
+            <Diary>
+              <colgroup>
+                <left>
+                  <Timestamp/>
+                </left>
+                <right>
+                  <CreatedBy/>
+                </right>
+              </colgroup>
+              <Title/>
+              <Area_Code/>
+              <Text/>
+              <Sketch/>
+              <attachSketch/>
+              <Photo/>
+              <attachPhoto/>
+              <Audio/>
+              <attachAudio/>
+              <Video/>
+              <attachVideo/>
+              <viewattached/>
+            </Diary>
+          </Diary>
         </faims>
       </instance>
 
@@ -225,6 +249,83 @@
         <input ref="mainsubjects" faims_attribute_name="Main Subjects" faims_attribute_type="measure">
           <label>MAIN SUBJECTS COVERED:</label>
         </input>
+      </group>
+    </group>
+    <group ref="Diary" faims_archent_type="Diary">
+      <label>{Diary}</label>
+      <group ref="Diary">
+        <label>{Diary}</label>
+        <group ref="colgroup" faims_style="orientation">
+          <label/>
+          <group ref="left" faims_style="even">
+            <label/>
+            <input faims_attribute_name="Timestamp" faims_attribute_type="measure" faims_read_only="true" ref="Timestamp" faims_certainty="false">
+              <label>{Timestamp}</label>
+            </input>
+          </group>
+          <group ref="right" faims_style="even">
+            <label/>
+            <input faims_attribute_name="CreatedName" faims_attribute_type="measure" faims_read_only="true" ref="CreatedBy" faims_certainty="false">
+              <label>{CreatedBy}</label>
+            </input>
+          </group>
+        </group>
+        <input faims_attribute_name="Title" faims_attribute_type="measure" faims_read_only="false" ref="Title" faims_certainty="false">
+          <label>{Title}</label>
+        </input>
+        <select1 faims_annotation="false" faims_attribute_name="AreaCode" faims_attribute_type="vocab" faims_certainty="false" faims_read_only="false" ref="Area_Code" faims_style_class="sharedwithvocab">
+          <label>{AreaCode}</label>
+          <item>
+            <label>{placeholder}</label>
+            <value>placeholder</value>
+          </item>
+        </select1>
+        <input faims_attribute_name="Text" faims_attribute_type="measure" faims_read_only="false" ref="Text">
+          <label>{Text}</label>
+        </input>
+        <select faims_annotation="true" faims_attribute_name="FileAttach" faims_attribute_type="measure" faims_sync="true" ref="Sketch" type="file">
+          <label>{Sketch}</label>
+          <item>
+            <label>placeholder</label>
+            <value>placeholder</value>
+          </item>
+        </select>
+        <trigger ref="attachSketch">
+          <label>{Attach_Sketch}</label>
+        </trigger>
+        <select faims_annotation="true" faims_attribute_name="Photo" faims_attribute_type="measure" faims_sync="true" ref="Photo" type="camera">
+          <label>{Attached_Photos}</label>
+          <item>
+            <label>placeholder</label>
+            <value>placeholder</value>
+          </item>
+        </select>
+        <trigger ref="attachPhoto">
+          <label>Take Picture</label>
+        </trigger>
+        <select faims_annotation="true" faims_attribute_name="Audio" faims_attribute_type="measure" faims_sync="true" ref="Audio" type="file">
+          <label>{Attached_Audio_Files}</label>
+          <item>
+            <label>placeholder</label>
+            <value>placeholder</value>
+          </item>
+        </select>
+        <trigger ref="attachAudio">
+          <label>{Record_Audio}</label>
+        </trigger>
+        <select faims_attribute_name="Video" faims_attribute_type="measure" faims_annotation="true" faims_sync="true" ref="Video" type="video">
+          <label>{Attached_Videos}</label>
+          <item>
+            <label>placeholder</label>
+            <value>placeholder</value>
+          </item>
+        </select>
+        <trigger ref="attachVideo">
+          <label>{Record_Video}</label>
+        </trigger>
+        <trigger ref="viewattached">
+          <label>{View_Attached_Files}</label>
+        </trigger>
       </group>
     </group>
   </h:body>
