@@ -390,6 +390,11 @@ onEvent("Diary/Diary/attachAudio" , "click" , "attachAudioTo(\"Diary/Diary/Audio
 onEvent("Diary/Diary/attachVideo" , "click" , "attachVideoTo(\"Diary/Diary/Video\")");
 onEvent("Diary"                   , "show"  , "saveDiary()");
 
+onEvent("Diary/Diary/attachSketch", "click", "attachFileTo(\"Diary/Diary/Sketch\")");
+onEvent("Diary/Diary/attachPhoto",  "click", "attachPictureTo(\"Diary/Diary/Photo\")");
+onEvent("Diary/Diary/viewattached", "click", "viewArchEntAttachedFiles(diary_id)");
+
+
 diary_id = null;
 
 saveDiary() {
