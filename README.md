@@ -34,3 +34,14 @@ If you have any questions about the module, please contact the FAIMS team at **e
 
 ## Screenshots:
 
+<p align="left">
+  <img src="https://github.com/FAIMS/FlindersOralHistory/blob/master/screenshots/Screenshot_20170913-222611.png" width="250"/>
+  <img src="https://github.com/FAIMS/FlindersOralHistory/blob/master/screenshots/Screenshot_20170913-222624.png" width="250"/>
+  <img src="https://github.com/FAIMS/FlindersOralHistory/blob/master/screenshots/Screenshot_20170913-222636.png" width="250"/>
+</p>
+
+<p align="left">
+  <img src="https://github.com/FAIMS/FlindersOralHistory/blob/master/screenshots/Screenshot_20170913-222640.png" width="250"/>
+  <img src="https://github.com/FAIMS/FlindersOralHistory/blob/master/screenshots/Screenshot_20170913-222644.png" width="250"/>
+  <img src="https://github.com/FAIMS/FlindersOralHistory/blob/master/screenshots/Screenshot_20170913-222650.png" width="250"/>
+</p>
